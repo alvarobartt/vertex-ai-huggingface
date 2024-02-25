@@ -12,7 +12,7 @@ Collection of examples on how to train, deploy and monitor 🤗 HuggingFace mode
 
     `pip install google-cloud-aiplatform --upgrade`
 
-* `git lfs` needs to be installed for pulling / cloning models from the HuggingFace Hub.
+* `git lfs` needs to be installed for pulling / cloning models from the HuggingFace Hub. See the installation notes at https://git-lfs.com/.
 
 ## Contents
 
