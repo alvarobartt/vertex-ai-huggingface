@@ -1,16 +1,14 @@
 # Vertex AI 🤝🏻 HuggingFace
 
-🤗 Collection of examples on how to train, deploy and monitor HuggingFace models in Google Cloud Vertex AI
+Collection of examples on how to train, deploy and monitor 🤗 HuggingFace models in Google Cloud Vertex AI
 
-## Installation and setup
-
-_A Google Cloud account must exist in advance, and the user should have enough (lets say admin) permissions on Vertex AI, as well as permissions on Cloud Storage and Container Registry; as those are the main services that will be used. Additionally, all the APIs affecting those services and their interconnections should be enabled. Anyway, the permission level is mentioned within each notebook separately when needed._
+## Installation
 
 * `gcloud` CLI needs to be installed and logged in the project that will be used. See the installation notes at https://cloud.google.com/sdk/docs/install
 
 * `docker` needs to be installed locally, and up and running, since it will be used to build the CPR images before pushing those to the container registry. See the installation notes at https://docs.docker.com/engine/install/
 
-* `google-cloud-aiplatform` Python library is required to programatically build the CPR image and to define the custom prediction code via a custom `Predictor`.
+* `google-cloud-aiplatform` Python library is required to programatically build the CPR image, to define the custom prediction code via a custom `Predictor`, to run the online/batch predictions, etc.
 
     `pip install google-cloud-aiplatform --upgrade`
 
@@ -28,4 +26,4 @@ This collection will be updated iteratively, and here are some of the things tha
 * [ ] `batch-predictions/`: contains some notebooks to explain the concept of batch predictions, comparing those to online predictions, and also providing some practical use cases
 * [ ] `real-time-inference/sentence-transformers/`: contains some notebooks explaining how to upload, register and deploy `SentenceTransformers` models in Vertex AI
 
-Additionally, a Python package is being currently developed to remove the hustle of using `google-cloud-aiplatform` and to manually define everything, while everything will be done similarly to how it's done in `sagemaker` which is AWS SageMaker's Python SDK, more information about the tentative approach pattern at [`sagemaker.huggingface.HuggingFaceModel`](https://github.com/aws/sagemaker-python-sdk/blob/master/src/sagemaker/huggingface/model.py).
+Additionally, a Python package is being currently developed to remove the hustle of using `google-cloud-aiplatform` with HuggingFace models, providing more extensibility towards HuggingFace's use cases. The interface looks similar to the one defined in `sagemaker`, AWS SageMaker's Python SDK; check it at [`sagemaker.huggingface.HuggingFaceModel`](https://github.com/aws/sagemaker-python-sdk/blob/master/src/sagemaker/huggingface/model.py).
