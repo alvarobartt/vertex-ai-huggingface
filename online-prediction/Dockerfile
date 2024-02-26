@@ -13,4 +13,3 @@ ARG TORCH="2.2.0"
 
 RUN python -m pip install --no-cache-dir --upgrade pip && \
     python -m pip install --no-cache-dir torch==${TORCH}
-
