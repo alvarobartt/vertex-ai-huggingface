@@ -25,9 +25,9 @@ class HuggingFacePredictor(Predictor):
         with tarfile.open("model.tar.gz", "r:gz") as tar:
             tar.extractall(path="./model")
         logger.debug(f"HF_TASK value is {os.getenv('HF_TASK')}")
-        self._pipeline = pipeline(os.getenv("HF_TASK", ""), model="./model", device_map="auto")  # type: ignore
+        self._pipeline = pipeline(os.getenv("HF_TASK", ""), model="./model", device_map="auto")
         logger.debug("`pipeline` successfully loaded!")
         logger.debug(f"`pipeline` is using device={self._pipeline.device}")
 
     def predict(self, instances: Dict[str, Any]) -> Dict[str, Any]:
-        return self._pipeline(**instances)  # type: ignore
+        return self._pipeline(**instances)
